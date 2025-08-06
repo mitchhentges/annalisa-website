@@ -35,7 +35,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 15px;
+      gap: 1px;
     }
 
     button {
@@ -57,6 +57,40 @@
       background-color: #ffccf9;
       transform: scale(1.05);
     }
+
+#results-container {
+      margin-top: 30px;
+      font-size: 20px;
+      padding: 20px;
+      background-color: #fff0f5;
+      border-radius: 15px;
+      border: 2px solid #ffb6c1;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    #results-container p {
+      margin: 5px 0;
+      font-weight: 600;
+      color: #d63384;
+    }
+    
+    .ranking-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+      border-bottom: 1px dashed #ffb6c1;
+    }
+    
+    .ranking-item:last-child {
+      border-bottom: none;
+    }
+
+    .ranking-text {
+        font-weight: 600;
+    }
   </style>
 </head>
 <body>
@@ -67,17 +101,64 @@
   <!-- IMMAGINE -->
   <img src="immagine.jpg" alt="The most beautiful chicken ever">
 
-  <!-- BOTTONI -->
-  <div class="button-container">
-    <button onclick="alert('You are SO right! 😊')">✨ 1000/10 ✨</button>
-    <button onclick="alert('Absolutely agree 😚 Great call IMHO')">🌈 Infinite 🌈</button>
-    <button onclick="alert('Isn\'t she the cutest 🥰')">🐥 Pulcina giuliva 🐥</button>
-    <button onclick="alert('That\'s so true! 😌')">🎀 No number is enough🎀</button>
-    <button onclick="alert('She has that royal attitude, eh? 😆')">💫 Majestic 💫</button>
-  </div>
 
+
+  <!-- BOTTONI -->
+    <div class="button-container">
+    <button onclick="recordClick('1000/10')">✨ 1000/10 ✨</button>
+    <button onclick="recordClick('Infinite')">🌈 Infinite 🌈</button>
+    <button onclick="recordClick('Pulcina giuliva')">🐥 Pulcina giuliva 🐥</button>
+    <button onclick="recordClick('No number is enough')">🎀 No number is enough🎀</button>
+    <button onclick="recordClick('Majestic')">💫 Majestic 💫</button>
+  </div>
+
+<script>
+  const clickCounters = {
+    '1000/10': 0,
+    'Infinite': 0,
+    'Pulcina giuliva': 0,
+    'No number is enough': 0,
+    'Majestic': 0
+  };
+
+  function recordClick(option) {
+    // 1. Increment the counter for the clicked option
+    clickCounters[option]++;
+
+    // 2. Get the custom message for the clicked button
+    let customMessage = '';
+    switch(option) {
+      case '1000/10':
+        customMessage = 'You are SO right! 😊';
+        break;
+      case 'Infinite':
+        customMessage = 'Absolutely agree 😚 great call IMHO';
+        break;
+      case 'Pulcina giuliva':
+        customMessage = 'Isn\'t she the cutest 🥰';
+        break;
+      case 'No number is enough':
+        customMessage = 'That\'s so true! 😌';
+        break;
+      case 'Majestic':
+        customMessage = 'She has that royal attitude, eh? 😆';
+        break;
+    }
+
+    // 3. Build the full message with all click counts
+    let fullMessage = customMessage + "\n\n"; // Start with the custom message and two new lines
+
+    // Sort the options by their vote count in descending order
+    const sortedOptions = Object.keys(clickCounters).sort((a, b) => clickCounters[b] - clickCounters[a]);
+
+    // Loop through each sorted option and add its count to the message
+    sortedOptions.forEach(key => {
+      fullMessage += `"${key}" was clicked ${clickCounters[key]} times.\n`;
+    });
+
+    // 4. Show the combined pop-up message
+    alert(fullMessage);
+  }
+</script>
 </body>
 </html>
-
-
-
