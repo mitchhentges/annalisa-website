@@ -81,5 +81,54 @@
     <button onclick="alert('Ha un non so che di regale, eh? :)')">💫 Magnifica 💫</button>
   </div>
 
+  <script>
+  const clickCounters = {
+    '1000/10': 0,
+    'Infinito': 0,
+    'Pulcina giuliva': 0,
+    'Nessun numero basta': 0,
+    'Magnifica': 0
+  };
+
+  function recordClick(option) {
+    // 1. Increment the counter for the clicked option
+    clickCounters[option]++;
+
+    // 2. Get the custom message for the clicked button
+    let customMessage = '';
+    switch(option) {
+      case '1000/10':
+        customMessage = 'Hai PROPRIO ragione! 😊';
+        break;
+      case 'Infinito':
+        customMessage = 'Assolutamente d\'accordo 😚';
+        break;
+      case 'Pulcina giuliva':
+        customMessage = 'Non è la più carina? 🥰';
+        break;
+      case 'Nessun numero basta':
+        customMessage = 'è proprio vero! 😌';
+        break;
+      case 'Magnifica':
+        customMessage = 'Ha un non so che di regale, eh? 😆';
+        break;
+    }
+
+    // 3. Build the full message with all click counts
+    let fullMessage = customMessage + "\n\n"; // Start with the custom message and two new lines
+
+    // Sort the options by their vote count in descending order
+    const sortedOptions = Object.keys(clickCounters).sort((a, b) => clickCounters[b] - clickCounters[a]);
+
+    // Loop through each sorted option and add its count to the message
+    sortedOptions.forEach(key => {
+      fullMessage += `"${key}" was clicked ${clickCounters[key]} times.\n`;
+    });
+
+    // 4. Show the combined pop-up message
+    alert(fullMessage);
+  }
+</script>
+
 </body>
 </html>
