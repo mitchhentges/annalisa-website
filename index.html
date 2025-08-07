@@ -1,166 +1,329 @@
 <!DOCTYPE html>
+
 <html lang="it">
+
 <head>
-  <meta charset="UTF-8">
-  <title>RATE THE CHICKEN</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-  <style>
- body {
-  font-family: 'Quicksand', sans-serif;
-  background: linear-gradient(to bottom right, #ffe4f0, #e0f7fa);
-  background-attachment: fixed; /* This keeps the background from scrolling */
-  text-align: center;
-  margin: 0;
-  padding: 30px 20px;
-  color: #d63384;
-  min-height: 100vh; 
-}
 
-    h1 {
-      font-family: 'Pacifico', cursive;
-      font-size: 36px;
-      margin-bottom: 20px;
-      color: #ff69b4;
-      text-shadow: 1px 1px 3px white;
-    }
+  <meta charset="UTF-8">
 
-    img {
-      width: 100%;
-      max-width: 350px;
-      border: 5px dashed #ffb6c1;
-      border-radius: 20px;
-      box-shadow: 0 0 20px #f8bbd0;
-      margin-bottom: 30px;
-    }
+  <title>RATE THE CHICKEN</title>
 
-    .button-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1px;
-    }
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
-    button {
-      width: 80%;
-      max-width: 280px;
-      padding: 15px;
-      font-size: 18px;
-      cursor: pointer;
-      border: 2px solid #ffb6c1;
-      background-color: #ffe0f0;
-      color: #d63384;
-      border-radius: 25px;
-      box-shadow: 0 4px 6px rgba(255, 182, 193, 0.4);
-      transition: all 0.3s ease;
-      font-weight: bold;
-    }
+  <style>
 
-    button:hover {
-      background-color: #ffccf9;
-      transform: scale(1.05);
-    }
+    body {
+
+      font-family: 'Quicksand', sans-serif;
+
+      background: linear-gradient(to bottom right, #ffe4f0, #e0f7fa);
+      background-attachment: fixed;
+
+      text-align: center;
+
+      margin: 0;
+
+      padding: 30px 20px;
+
+      color: #d63384;
+      min-height: 100vh;
+
+    }
+
+
+
+    h1 {
+
+      font-family: 'Pacifico', cursive;
+
+      font-size: 36px;
+
+      margin-bottom: 20px;
+
+      color: #ff69b4;
+
+      text-shadow: 1px 1px 3px white;
+
+    }
+
+
+
+    img {
+
+      width: 100%;
+
+      max-width: 350px;
+
+      border: 5px dashed #ffb6c1;
+
+      border-radius: 20px;
+
+      box-shadow: 0 0 20px #f8bbd0;
+
+      margin-bottom: 30px;
+
+    }
+
+
+
+    .button-container {
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      gap: 1px;
+
+    }
+
+
+
+    button {
+
+      width: 80%;
+
+      max-width: 280px;
+
+      padding: 15px;
+
+      font-size: 18px;
+
+      cursor: pointer;
+
+      border: 2px solid #ffb6c1;
+
+      background-color: #ffe0f0;
+
+      color: #d63384;
+
+      border-radius: 25px;
+
+      box-shadow: 0 4px 6px rgba(255, 182, 193, 0.4);
+
+      transition: all 0.3s ease;
+
+      font-weight: bold;
+
+    }
+
+
+
+    button:hover {
+
+      background-color: #ffccf9;
+
+      transform: scale(1.05);
+
+    }
+
+
 
 #results-container {
-      margin-top: 30px;
-      font-size: 20px;
-      padding: 20px;
-      background-color: #fff0f5;
-      border-radius: 15px;
-      border: 2px solid #ffb6c1;
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    
-    #results-container p {
-      margin: 5px 0;
-      font-weight: 600;
-      color: #d63384;
-    }
-    
-    .ranking-item {
-      display: flex;
-      justify-content: space-between;
-      padding: 5px 0;
-      border-bottom: 1px dashed #ffb6c1;
-    }
-    
-    .ranking-item:last-child {
-      border-bottom: none;
-    }
 
-    .ranking-text {
-        font-weight: 600;
-    }
-  </style>
+      margin-top: 30px;
+
+      font-size: 20px;
+
+      padding: 20px;
+
+      background-color: #fff0f5;
+
+      border-radius: 15px;
+
+      border: 2px solid #ffb6c1;
+
+      max-width: 400px;
+
+      margin-left: auto;
+
+      margin-right: auto;
+
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+    }
+
+    
+
+    #results-container p {
+
+      margin: 5px 0;
+
+      font-weight: 600;
+
+      color: #d63384;
+
+    }
+
+    
+
+    .ranking-item {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      padding: 5px 0;
+
+      border-bottom: 1px dashed #ffb6c1;
+
+    }
+
+    
+
+    .ranking-item:last-child {
+
+      border-bottom: none;
+
+    }
+
+
+
+    .ranking-text {
+
+        font-weight: 600;
+
+    }
+
+  </style>
+
 </head>
+
 <body>
 
-  <!-- TITOLO -->
-  <h1>🌸 Rate the chicken! 🌸</h1>
-
-  <!-- IMMAGINE -->
-  <img src="immagine.jpg" alt="The most beautiful chicken ever">
 
 
+  <!-- TITOLO -->
 
-  <!-- BOTTONI -->
-    <div class="button-container">
+  <h1>🌸 Rate the chicken! 🌸</h1>
+
+
+
+  <!-- IMMAGINE -->
+
+  <img src="immagine.jpg" alt="The most beautiful chicken ever">
+
+
+
+
+
+
+
+  <!-- BOTTONI -->
+
+    <div class="button-container">
+
     <button onclick="recordClick('1000/10')">✨ 1000/10 ✨</button>
+
     <button onclick="recordClick('Infinite')">🌈 Infinite 🌈</button>
+
     <button onclick="recordClick('Pulcina giuliva')">🐥 Pulcina giuliva 🐥</button>
+
     <button onclick="recordClick('No number is enough')">🎀 No number is enough🎀</button>
+
     <button onclick="recordClick('Majestic')">💫 Majestic 💫</button>
+
   </div>
 
+
+
 <script>
-  const clickCounters = {
-    '1000/10': 0,
-    'Infinite': 0,
-    'Pulcina giuliva': 0,
-    'No number is enough': 0,
-    'Majestic': 0
-  };
 
-  function recordClick(option) {
-    // 1. Increment the counter for the clicked option
-    clickCounters[option]++;
+  const clickCounters = {
 
-    // 2. Get the custom message for the clicked button
-    let customMessage = '';
-    switch(option) {
-      case '1000/10':
-        customMessage = 'You are SO right! 😊';
-        break;
-      case 'Infinite':
-        customMessage = 'Absolutely agree 😚 great call IMHO';
-        break;
-      case 'Pulcina giuliva':
-        customMessage = 'Isn\'t she the cutest 🥰';
-        break;
-      case 'No number is enough':
-        customMessage = 'That\'s so true! 😌';
-        break;
-      case 'Majestic':
-        customMessage = 'She has that royal attitude, eh? 😆';
-        break;
-    }
+    '1000/10': 0,
 
-    // 3. Build the full message with all click counts
-    let fullMessage = customMessage + "\n\n"; // Start with the custom message and two new lines
+    'Infinite': 0,
 
-    // Sort the options by their vote count in descending order
-    const sortedOptions = Object.keys(clickCounters).sort((a, b) => clickCounters[b] - clickCounters[a]);
+    'Pulcina giuliva': 0,
 
-    // Loop through each sorted option and add its count to the message
-    sortedOptions.forEach(key => {
-      fullMessage += `"${key}" was clicked ${clickCounters[key]} times.\n`;
-    });
+    'No number is enough': 0,
 
-    // 4. Show the combined pop-up message
-    alert(fullMessage);
-  }
+    'Majestic': 0
+
+  };
+
+
+
+  function recordClick(option) {
+
+    // 1. Increment the counter for the clicked option
+
+    clickCounters[option]++;
+
+
+
+    // 2. Get the custom message for the clicked button
+
+    let customMessage = '';
+
+    switch(option) {
+
+      case '1000/10':
+
+        customMessage = 'You are SO right! 😊';
+
+        break;
+
+      case 'Infinite':
+
+        customMessage = 'Absolutely agree 😚 great call IMHO';
+
+        break;
+
+      case 'Pulcina giuliva':
+
+        customMessage = 'Isn\'t she the cutest 🥰';
+
+        break;
+
+      case 'No number is enough':
+
+        customMessage = 'That\'s so true! 😌';
+
+        break;
+
+      case 'Majestic':
+
+        customMessage = 'She has that royal attitude, eh? 😆';
+
+        break;
+
+    }
+
+
+
+    // 3. Build the full message with all click counts
+
+    let fullMessage = customMessage + "\n\n"; // Start with the custom message and two new lines
+
+
+
+    // Sort the options by their vote count in descending order
+
+    const sortedOptions = Object.keys(clickCounters).sort((a, b) => clickCounters[b] - clickCounters[a]);
+
+
+
+    // Loop through each sorted option and add its count to the message
+
+    sortedOptions.forEach(key => {
+
+      fullMessage += `"${key}" was clicked ${clickCounters[key]} times.\n`;
+
+    });
+
+
+
+    // 4. Show the combined pop-up message
+
+    alert(fullMessage);
+
+  }
+
 </script>
+
 </body>
+
 </html>
